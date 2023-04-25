@@ -1,2 +1,7 @@
-package PACKAGE_NAME;public class AirConditioner {
+public class AirConditioner {
+
+    public static boolean isOn() {
+
+        return true;
+    }
 }
