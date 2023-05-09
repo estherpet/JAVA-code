@@ -7,5 +7,6 @@ public class AccountMain {
         String myName = user.getName();
         System.out.println(myName);
         System.out.println(user2.getName());
+        System.out.println();
     }
 }

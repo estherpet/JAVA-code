@@ -14,6 +14,18 @@ public class Account2 {
     public String getName () {
         return name;
     }
+    public void setBalance(int balance){
+        this.balance = String.valueOf(balance);
+    }
+    public int getBalance(){
+        return Integer.parseInt(balance);
+    }
+    public void setAccountType(String accountType){
+        this.accountType = accountType;
+    }
+    public String getAccountType(){
+        return accountType;
+    }
 
 }
 

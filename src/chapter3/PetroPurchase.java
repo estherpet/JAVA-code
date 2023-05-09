@@ -1,6 +1,8 @@
 package chapter3;
 
 public class PetroPurchase {
+
+
     private String stationLocation;
     private String petrotype;
     private int quality;

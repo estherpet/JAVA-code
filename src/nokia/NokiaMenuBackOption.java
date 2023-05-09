@@ -171,6 +171,7 @@ public class NokiaMenuBackOption {
                 System.out.println("3.Received calls duration");
                 System.out.println("4.Dialled calls duration");
                 System.out.println("5.Clear timers");
+                System.out.println("6.Back");
                 int ShowCallDuration = input.nextInt();
                 switch (ShowCallDuration) {
                     case 1 -> System.out.println("Last call duration");
@@ -178,6 +179,7 @@ public class NokiaMenuBackOption {
                     case 3 -> System.out.println("Received calls duration");
                     case 4 -> System.out.println("Dialled calls duration ");
                     case 5 -> System.out.println("Clear timers");
+                    case 6 ->CallRegister();
                 }
             }
             case 6 -> {
@@ -204,6 +206,9 @@ public class NokiaMenuBackOption {
         }
     }
 
+    private static void ShowCallDuration() {
+    }
+
     private static void Messages() {
         Scanner input = new Scanner(System.in);
         System.out.println("1.Write messages");
@@ -216,6 +221,7 @@ public class NokiaMenuBackOption {
         System.out.println("8.Info service");
         System.out.println("9.Voice mailbox number");
         System.out.println("10.Service command editor");
+        System.out.println("11.Go back to Menu");
         int Messages = input.nextInt();
         switch (Messages) {
             case 1 -> System.out.println("Write messages");
@@ -228,6 +234,7 @@ public class NokiaMenuBackOption {
             case 8 -> System.out.println("Info service");
             case 9 -> System.out.println("Voice mailbox number");
             case 10 -> System.out.println("Service command editor");
+            case 11 -> nokiaMenu();
         }
 
     }
@@ -236,28 +243,36 @@ public class NokiaMenuBackOption {
         Scanner input = new Scanner(System.in);
         System.out.println("1.Set 1");
         System.out.println("2.Common");
+        System.out.println("3.Back to Messages");
         int messageSettings = input.nextInt();
         switch (messageSettings) {
             case 1 -> {
                 System.out.println("1.Message centre number");
                 System.out.println("2.Message sent as");
                 System.out.println("3.Message validity");
+                System.out.println("4.Back");
+
                 int Set = input.nextInt();
                 switch (Set) {
                     case 1 -> System.out.println("Message centre number");
                     case 2 -> System.out.println("Message sent as");
                     case 3 -> System.out.println("Message validity");
+                    case 4 -> MessageSettings();
                 }
             }
             case 2 -> {
                 System.out.println("1.Delivery report");
                 System.out.println("2.Reply via same centre");
                 System.out.println("3.Character support");
+                System.out.println("4.Go back to message settings");
+                System.out.println("5.Go back to Messages");
                 int Common = input.nextInt();
                 switch (Common) {
                     case 1 -> System.out.println("Delivery report");
                     case 2 -> System.out.println("Reply via same centre");
                     case 3 -> System.out.println("Character support");
+                    case 4 -> MessageSettings();
+                    case 5 -> Messages();
                 }
             }
         }

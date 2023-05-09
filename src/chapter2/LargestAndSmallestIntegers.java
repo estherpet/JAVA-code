@@ -15,7 +15,7 @@ public class LargestAndSmallestIntegers {
         if (number1 < number4){
             smallestNumber = number1;
         }
-        System.out.println("smallest number is : " + smallestNumber);
+        System.out.println(" The smallest number is : " + smallestNumber);
         if (number5 > number1){
             largestNumber = number5;
         }
@@ -27,6 +27,7 @@ public class LargestAndSmallestIntegers {
             largestNumber = number5;
         }
         System.out.println("The largest number is : " + largestNumber);
+
 
 
     }
