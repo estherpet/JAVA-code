@@ -4,17 +4,21 @@ import java.util.Scanner;
 
 public class FindingTheLargestNumber {
     public static void main(String[] args) {
-//        Scanner input = new Scanner(System.in);
+        Scanner input = new Scanner(System.in);
+        int largest = 0;
         for (int counter = 0;counter < 10;counter++){
-            Scanner input = new Scanner(System.in);
-            System.out.println("Enter a number");
+            System.out.println("Enter a number :");
             int number = input.nextInt();
-            int largest = number;
-            if (number > largest) {
+
+            if (number > largest){
                 largest = number;
+
             }
-            System.out.println("The largest number is :" + largest);
+            System.out.println("largest number is :" + largest);
+
         }
+
 
     }
 }
+

@@ -38,9 +38,7 @@ public class HeartRate {
     }
 
     public int getAge() {
-        String year = "2025 ";
-
-
+        String year = "2025";
         return getAge();
     }
 }

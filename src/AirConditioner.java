@@ -1,7 +1,24 @@
 public class AirConditioner {
 
-    public static boolean isOn() {
+    public  boolean isOn;
+    private int temperature;
 
-        return true;
+    public void toggleOn(){
+        isOn = !isOn;
+    }
+    public boolean isOn(){
+        return isOn;
+    }
+
+
+    public int getTemperature() {
+        return temperature;
+    }
+
+    public void increaseTemp() {
+        if (temperature == 30)
+            temperature = temperature;
+        else temperature++;
+
     }
 }

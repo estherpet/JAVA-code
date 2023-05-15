@@ -1,25 +1,28 @@
 import org.junit.Test;
 
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class AirConditionerTest {
-
-
-public void setUp(){
-    AirConditioner airConditioner = new AirConditioner();
-}
+    AirConditioner epAc = new AirConditioner();
     @Test
     public void TurnOnTest() {
-        // Given
-        AirConditioner airConditioner = new AirConditioner();
-        //Check that
-        airConditioner.isOn();
-        //Assert true
-        assertTrue(AirConditioner.isOn());
+    epAc.toggleOn();
+    assertTrue(epAc.isOn());
+    }
+    @Test
+    public  void setTempTest(){
+        epAc.toggleOn();
+        assertEquals(0,epAc.getTemperature());
+        epAc.increaseTemp();
+        assertEquals(1, epAc.getTemperature());
 
     }
     @Test
-    public void DecreaseTemperatureTest(){
-
+    public void maximumTempTest(){
+        epAc.toggleOn();
+        for (int i = 1;i <= 30;i++)epAc.increaseTemp();
+        epAc.increaseTemp();
+        assertEquals(30,epAc.getTemperature());
     }
 }

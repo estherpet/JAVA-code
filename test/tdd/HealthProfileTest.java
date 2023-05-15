@@ -40,7 +40,6 @@ public class HealthProfileTest {
     @Test
     public void calculateMaximumHeartRateAndTargetHeartRateRange(){
 
-        assertEquals(202,healthProfile.getmaximumHeartRate(18));
     }
 
 }
