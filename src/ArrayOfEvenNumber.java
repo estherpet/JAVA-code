@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public interface ArrayOfEvenNumber {
+public class ArrayOfEvenNumber {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int [] evenNumber = new int[5];

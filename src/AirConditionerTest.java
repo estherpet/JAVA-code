@@ -25,4 +25,9 @@ public class AirConditionerTest {
         epAc.increaseTemp();
         assertEquals(30,epAc.getTemperature());
     }
+    @Test
+    public void minimumTempTest(){
+        epAc.toggleOn();
+
+    }
 }
