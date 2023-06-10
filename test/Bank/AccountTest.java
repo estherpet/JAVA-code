@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class AccountTest {
-    Account queenieAccount = new Account("Esther","Peter", "1234");
+    Account queenieAccount = new Account("Esther","Peter", "1234","08130468722");
     @Test
     public void accountExistTest(){
         assertNotNull(queenieAccount);
