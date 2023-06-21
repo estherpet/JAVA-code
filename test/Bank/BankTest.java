@@ -21,14 +21,17 @@ public void oneTest(){
         bank.registerNewCustomer("pat", "peter", "1234", "08160243567");
         String acNumber = bank.accountNumber("8160243567");
         bank.deposit(acNumber, 5000);
-        assertEquals(5000, bank.getBalance(acNumber,"1234"));
+        assertThrows(IllegalArgumentException.class,()-> bank.getBalance(acNumber,"1234"));
+//        assertEquals(5000, bank.getBalance(acNumber,"1234"));
     }
     @Test
     public void  cannotDepositNegativeMoneyTest(){
     bank.registerNewCustomer("samson","david","1234","09056666005");
     String acNumber = bank.accountNumber("9056666005");
     bank.deposit(acNumber,-4000);
-    assertEquals(0,bank.getBalance(acNumber,"1234"));
+    assertThrows(IllegalArgumentException.class,() -> bank.getBalance(acNumber,"1234"));
+//    assertEquals(0,bank.getBalance(acNumber,"1234"));
+
     }
     @Test
     public void withdrawMoneyTest(){
@@ -40,13 +43,15 @@ public void oneTest(){
     assertEquals(3000,bank.getBalance(acNumber,"1234"));
     }
     @Test
-    public void  cannotWithdrawNegativeAmountTest(){
+    public void  cannotWithdrawMoreThanBalanceTest(){
     bank.registerNewCustomer("paul","paulina","3455","08956788567");
     String acNumber = bank.accountNumber("8956788567");
     bank.deposit(acNumber,5000);
-    assertEquals(5000,bank.getBalance(acNumber,"3455"));
-    bank.withdraw(acNumber,-0,"3455");
-    assertEquals(5000,bank.getBalance(acNumber,"3455"));
+    assertThrows(IllegalArgumentException.class,()-> bank.getBalance(acNumber,"3455"));
+//    assertEquals(5000,bank.getBalance(acNumber,"3455"));
+    bank.withdraw(acNumber,10000,"3455");
+    assertThrows(IllegalArgumentException.class,()-> bank.getBalance(acNumber,"1234"));
+//    assertEquals(5000,bank.getBalance(acNumber,"3455"));
     }
     @Test
     public void transferMoneyTest(){

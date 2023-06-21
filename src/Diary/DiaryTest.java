@@ -48,4 +48,5 @@ public class DiaryTest {
         Gist gist = diary.findGistByTitle("Title");
         assertEquals("Body",gist.getBody());
     }
+
 }

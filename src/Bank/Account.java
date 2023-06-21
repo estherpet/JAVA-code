@@ -17,12 +17,15 @@ public class Account {
 
     public void deposit(int amount) {
         if (amount > 0) balance += amount;
-//        if (amount < 0)
+        if (amount <= 0) throw new IllegalArgumentException("amount cannot be less than zero");
 
     }
     public int getBalance(String pin) {
-        if (this.pin.equals(pin)) return balance;
+       if (pin.equals(pin))
+            return balance;
+        System.out.println(balance);
         return 0;
+
     }
 
     public void withdraw(String pin, int amount) {
@@ -30,11 +33,13 @@ public class Account {
             if (amount <= balance) {
                 balance -= amount;
             }
+            if (amount > balance)throw new IllegalArgumentException("cannot withdraw amount greater than balance");
         }
     }
 
     public void setPin(String pin) {
         this.pin = pin;
+        if (this.pin != "4")throw new IllegalArgumentException("Enter four digit pin");
 
     }
 
@@ -46,13 +51,18 @@ public class Account {
     }
     public void setAccountNumber(String accountNumber){
         this.accountNumber = accountNumber;
+        if (this.accountNumber != accountNumber)throw new IllegalArgumentException("enter correct account number");
+
     }
-    public String accountNumber(String phoneNumber) {
-        if (phoneNumber.charAt(0) == '0') {
-            return phoneNumber.substring(1);
-        } else {
-            return phoneNumber;
-        }
+    @Override
+    public String toString(){
+        return String.format("""
+                NAME: %s%n
+                ACCOUNT NUMBER: %s%n
+                BALANCE: %s%n
+                
+           
+                """, (firstName + " " + lastName) ,accountNumber,balance );
     }
 
 }
