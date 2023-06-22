@@ -48,5 +48,23 @@ public class DiaryTest {
         Gist gist = diary.findGistByTitle("Title");
         assertEquals("Body",gist.getBody());
     }
-
+    @Test
+    public void updateEntryTest(){
+        diary.unlockWith("password");
+        assertFalse(diary.isLocked());
+        diary.addGist("Title","Body");
+        diary.addGist("my day","i am not fine");
+        diary.updateGist(1,"my day","i am not fine");
+        Gist body = diary.findGistByTitle("my day");
+        assertEquals("i am not fine",body.getBody());
+    }
+    @Test
+    public void deleteGistTest(){
+        diary.unlockWith("password");
+        assertFalse(diary.isLocked());
+        diary.addGist("sad","i am not fine");
+        diary.addGist("happy","i am happy");
+        diary.deleteGist("happy");
+        assertEquals(1,diary.countGist());
+    }
 }

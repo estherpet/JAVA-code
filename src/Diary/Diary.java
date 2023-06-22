@@ -50,4 +50,29 @@ public class Diary {
         return null;
 
     }
+
+    public void updateGist(int id, String title, String body) {
+        boolean diaryIsUnlocked = !islocked;
+        if (diaryIsUnlocked){
+            for (Gist gist:gists){
+                if (gist.getId() == id){
+                    gist.setBody(body);
+                    gist.setTitle(title);
+                }
+            }
+        }
+    }
+
+    public void deleteGist(String title) {
+        boolean diaryIsUnlocked = !islocked;
+        if (diaryIsUnlocked){
+            for (Gist gist :gists){
+                if (gist.getTitle().equals(title)){
+                    gists.remove(gist);
+                    gistCount--;
+                    break;
+                }
+            }
+        }
+    }
 }

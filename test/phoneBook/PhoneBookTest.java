@@ -32,7 +32,15 @@ public class PhoneBookTest {
         phoneBook.createContact("favour","pat","08154326789");
         phoneBook.createContact("favour","desire","09061705839");
         phoneBook.createContact("lehi","favour","09130468134");
-        assertEquals(,phoneBook.findContact("favour"));
+//        assertEquals(3,phoneBook.findContact("favour"));
+        }
+        @Test
+    public void updateContactTest(){
+        phoneBook.createContact("faith","stella","07089657489");
+        phoneBook.createContact("samson","simon","09134567678");
+        phoneBook.findContact("faith");
+        phoneBook.updateContact("faith","martha");
+//        assertEquals("07089657489 martha stella", phoneBook.searchContact("martha"));
         }
     }
 

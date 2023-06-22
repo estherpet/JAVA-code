@@ -16,4 +16,18 @@ public class Gist {
     public String getTitle() {
         return title;
     }
+
+    public int getId() {
+        return 0;
+    }
+
+    public void setBody(String body) {
+        this.body = body;
+
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
 }
