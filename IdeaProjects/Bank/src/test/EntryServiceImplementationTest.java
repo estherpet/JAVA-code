@@ -40,6 +40,7 @@ class EntryServiceImplementationTest {
       entry1.setBody("yesterday was fun, i really enjoyed my day");
       entryServices.addEntry(entry1);
       entryServices.deleteEntry(1);
+      System.out.println(entry.getId());
       assertEquals(1,entryServices.numberOfEntry());
   }
   @Test
@@ -67,5 +68,14 @@ class EntryServiceImplementationTest {
       entry1.setBody("yesterday was fun, i really enjoyed my day");
       entryServices.addEntry(entry1);
       assertEquals("fact",entryServices.findEntryByTitle(entry.getTitle()));
+  }
+  @Test
+    public void addEntry_findByIdTest(){
+    Response entry = new Response();
+    entry.setTitle("esther");
+    entry.setBody("my life is wonderful");
+    entryServices.addEntry(entry);
+    var foundResponse = entryServices.findById(1);
+    assertEquals("esther",foundResponse.getTitle());
   }
 }

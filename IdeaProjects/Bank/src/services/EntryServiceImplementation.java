@@ -25,11 +25,11 @@ public class EntryServiceImplementation implements EntryServices{
     }
 
     @Override
-    public Response findEntryByTitle(Response title) {
+    public String findEntryByTitle(String title) {
         for (Entry entry: entryRepositories.findAll()){
-            if (entry.getTitle() == title)
+            if (entry.getTitle().equals(title))return title;
         }
-        return null;
+        return title;
     }
 
     @Override
@@ -40,5 +40,14 @@ public class EntryServiceImplementation implements EntryServices{
     @Override
     public int numberOfEntry() {
         return entryRepositories.count();
+    }
+
+    @Override
+    public Response findById(int id) {
+      var foundEntry =   entryRepositories.findById(id);
+      Response response = new Response();
+      response.setTitle(foundEntry.getTitle());
+      response.setBody(foundEntry.getBody());
+        return  response;
     }
 }

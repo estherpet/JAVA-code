@@ -7,23 +7,25 @@ import java.util.List;
 
 public class EntryRepositoriesImpementation implements EntryRepositories{
    private  List <Entry> entries = new ArrayList<>();
-    private int counter =1;
+    private int counter = 0;
     @Override
     public Entry save(Entry entry) {
         if (entry.getId()==0) {
+            entry.setId(generateID());
         entries.add(entry);
-        entry.setId(generateID());
+
         }
-        else {
-            entries.set(entry.getId(), entry);
-        }
+//        else {
+//            entries.set(entry.getId(), entry);
+//        }
         return entry;
     }
     @Override
     public Entry findById(int id) {
-        for (Entry entry: entries) {
-            if (entry.getId() == id)return  entry;}
-        return null;
+
+//        for (Entry entry: entries) {
+//            if (entry.getId() == id)return  entry;}
+        return entries.get(id -1);
     }
 
     private int generateID () {

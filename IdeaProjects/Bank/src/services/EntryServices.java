@@ -6,7 +6,8 @@ import dto.Response;
 public interface EntryServices {
 void addEntry(Response entryDto);
 void deleteEntry(int id);
-Response findEntryByTitle(Response title);
+String findEntryByTitle(String title);
 void updateEntry();
 int numberOfEntry();
+Response findById(int id);
 }
