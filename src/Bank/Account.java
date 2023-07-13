@@ -60,8 +60,6 @@ public class Account {
                 NAME: %s%n
                 ACCOUNT NUMBER: %s%n
                 BALANCE: %s%n
-                
-           
                 """, (firstName + " " + lastName) ,accountNumber,balance );
     }
 

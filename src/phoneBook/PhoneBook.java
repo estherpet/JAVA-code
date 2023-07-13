@@ -3,7 +3,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PhoneBook {
-    private ArrayList <Contact> contacts = new ArrayList<>();
+    private final ArrayList <Contact> contacts = new ArrayList<>();
 
     public Contact createContact(String firstname,String lastname,String number) {
         Contact contact = new Contact(firstname, lastname, number);

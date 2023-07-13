@@ -6,8 +6,8 @@ public class Bank {
 
     private ArrayList<Account> accounts = new ArrayList<>();
 
-    public Account registerNewCustomer(String firstName, String secondName, String pin, String phoneNumber) {
-        Account account = new Account(firstName, secondName, pin, phoneNumber);
+    public Account registerNewCustomer(String firstName, String lastName, String pin, String phoneNumber) {
+        Account account = new Account(firstName, lastName, pin, phoneNumber);
         accounts.add(account);
         final String actNumber = accountNumber(phoneNumber);
         account.setAccountNumber(actNumber);

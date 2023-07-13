@@ -33,12 +33,18 @@ public class Main {
     }
 
     private static void updateContact() {
+        String oldName = input("Enter name of contact");
+        String newName = input("Enter new name");
+        phonebook.updateContact(oldName,newName);
+        displayMessage("contact updated");
+        display();
 
     }
 
     private static void deleteContact() {
         String name = input("Enter name of contact");
         phonebook.DeleteContact(name);
+        displayMessage("contact deleted");
         display();
     }
     private static void searchContact() {

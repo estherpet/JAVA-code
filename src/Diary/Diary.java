@@ -6,6 +6,7 @@ import java.util.List;
 public class Diary {
     private boolean islocked = true;
     private String password;
+
     private int gistCount = 0;
     List<Gist> gists = new ArrayList<>();
 
@@ -36,7 +37,7 @@ public class Diary {
     }
 
     public int countGist() {
-        return gistCount;
+        return gists.size();
 
     }
 
@@ -75,4 +76,5 @@ public class Diary {
             }
         }
     }
+
 }

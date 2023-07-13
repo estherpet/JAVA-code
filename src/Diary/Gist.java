@@ -30,4 +30,10 @@ public class Gist {
         this.title = title;
     }
 
+@Override
+public String toString() {
+    return String.format("""
+                            
+            """,(title),body);
+ }
 }
